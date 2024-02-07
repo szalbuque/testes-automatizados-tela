@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.11.1 on win32)" generated="2024-02-07T19:36:28.833918" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.11.1 on win32)" generated="2024-02-07T20:18:21.597763" rpa="false" schemaversion="5">
 <suite id="s1" name="Testes-Automatizados-Tela" source="C:\Users\silviaz\OneDrive\Documentos\repositorios\testes-automatizados-tela">
-<suite id="s1-s1" name="Telasdominio" source="C:\Users\silviaz\OneDrive\Documentos\repositorios\testes-automatizados-tela\telasdominio.robot">
-<test id="s1-s1-t1" name="Entrar no sistema da biblioteca como gestor" line="40">
+<suite id="s1-s1" name="Testacompetencia" source="C:\Users\silviaz\OneDrive\Documentos\repositorios\testes-automatizados-tela\testacompetencia.robot">
+<test id="s1-s1-t1" name="Visualizar as empresas filtrando por serviços" line="56">
 <kw name="Run Keywords" owner="BuiltIn" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-02-07T19:36:29.072473" level="INFO">Opening browser 'chrome' to base url 'http://sistemas.t2mlab.com:3008/'.</msg>
+<msg time="2024-02-07T20:18:21.880081" level="INFO">Opening browser 'chrome' to base url 'http://sistemas.t2mlab.com:3006/'.</msg>
 <arg>url=${URL}</arg>
 <arg>browser=${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-02-07T19:36:29.072473" elapsed="4.924729"/>
+<status status="PASS" start="2024-02-07T20:18:21.880081" elapsed="4.994333"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-02-07T19:36:33.997202" elapsed="0.186496"/>
+<status status="PASS" start="2024-02-07T20:18:26.874414" elapsed="0.168181"/>
 </kw>
 <arg>Open Browser</arg>
 <arg>url=${URL}</arg>
@@ -21,50 +21,78 @@
 <arg>AND</arg>
 <arg>SeleniumLibrary.Maximize Browser Window</arg>
 <doc>Executes all the given keywords in a sequence.</doc>
-<status status="PASS" start="2024-02-07T19:36:29.071466" elapsed="5.112232"/>
+<status status="PASS" start="2024-02-07T20:18:21.878205" elapsed="5.165389"/>
 </kw>
 <kw name="Realizar login com ${USUARIO_GESTOR} e ${SENHA_VALIDA}" source_name="Realizar login com ${username} e ${password}">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-02-07T19:36:34.195258" level="INFO">Typing text 'Alan' into text field 'id:formBasicEmail'.</msg>
+<msg time="2024-02-07T20:18:27.047600" level="INFO">Typing text 'Alan' into text field 'id:formBasicEmail'.</msg>
 <arg>${LOGIN_PAGE.UsernameInput}</arg>
 <arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-02-07T19:36:34.189894" elapsed="0.168095"/>
+<status status="PASS" start="2024-02-07T20:18:27.045596" elapsed="0.169197"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-02-07T19:36:34.359012" level="INFO">Typing text '123' into text field 'id:formBasicPassword'.</msg>
+<msg time="2024-02-07T20:18:27.216803" level="INFO">Typing text '123' into text field 'id:formBasicPassword'.</msg>
 <arg>${LOGIN_PAGE.PasswordInput}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-02-07T19:36:34.357989" elapsed="0.073825"/>
+<status status="PASS" start="2024-02-07T20:18:27.215801" elapsed="0.112560"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-02-07T19:36:34.432823" level="INFO">Clicking element 'css:[class='botao-default btn btn-var(--verde-primario)']'.</msg>
+<msg time="2024-02-07T20:18:27.329869" level="INFO">Clicking element 'css:[class='botao-default btn btn-var(--verde-primario)']'.</msg>
 <arg>${LOGIN_PAGE.LoginButton}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-02-07T19:36:34.431871" elapsed="0.067816"/>
+<status status="PASS" start="2024-02-07T20:18:27.328361" elapsed="0.061492"/>
 </kw>
-<status status="PASS" start="2024-02-07T19:36:34.186897" elapsed="0.312790"/>
+<status status="PASS" start="2024-02-07T20:18:27.044595" elapsed="0.346265"/>
 </kw>
 <kw name="Selecionar o sistema com ${SISTEMAS_PAGE.BotaoSistema}" source_name="Selecionar o sistema com ${button}">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${button}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-02-07T19:36:34.505228" elapsed="1.521301"/>
+<status status="PASS" start="2024-02-07T20:18:27.391866" elapsed="1.543576"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-02-07T19:36:36.026529" level="INFO">Clicking element 'xpath://div[@title='Sistema de Biblioteca']//div//button'.</msg>
+<msg time="2024-02-07T20:18:28.936531" level="INFO">Clicking element 'xpath://div[@title='Sistema de Competência']//div//button'.</msg>
 <arg>${button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-02-07T19:36:36.026529" elapsed="0.079474"/>
+<status status="PASS" start="2024-02-07T20:18:28.935442" elapsed="0.070477"/>
 </kw>
-<status status="PASS" start="2024-02-07T19:36:34.500687" elapsed="1.605316"/>
+<status status="PASS" start="2024-02-07T20:18:27.391866" elapsed="1.615053"/>
 </kw>
-<status status="PASS" start="2024-02-07T19:36:29.068963" elapsed="7.038038"/>
+<kw name="Selecionar a opção com ${HOME_COMPETENCIAS.OpcaoEmpresa}" source_name="Selecionar a opção com ${nome}">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${nome}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-02-07T20:18:29.007921" elapsed="0.024142"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-02-07T20:18:29.032063" level="INFO">Clicking element 'xpath://div[@title='Empresa']//a'.</msg>
+<arg>${nome}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-07T20:18:29.032063" elapsed="0.061869"/>
+</kw>
+<status status="PASS" start="2024-02-07T20:18:29.006919" elapsed="0.089142"/>
+</kw>
+<kw name="Selecionar a opção com ${HOME_EMPRESA.OpcaoBuscarEmpresa}" source_name="Selecionar a opção com ${nome}">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${nome}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-02-07T20:18:29.099027" elapsed="0.017235"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-02-07T20:18:29.117261" level="INFO">Clicking element 'xpath://div[@title='Buscar Empresa']//a'.</msg>
+<arg>${nome}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-07T20:18:29.117261" elapsed="0.088417"/>
+</kw>
+<status status="PASS" start="2024-02-07T20:18:29.098038" elapsed="0.107640"/>
+</kw>
+<status status="PASS" start="2024-02-07T20:18:21.876194" elapsed="7.330482"/>
 </test>
-<status status="PASS" start="2024-02-07T19:36:28.874054" elapsed="7.235197"/>
+<status status="PASS" start="2024-02-07T20:18:21.646283" elapsed="7.571022"/>
 </suite>
-<status status="PASS" start="2024-02-07T19:36:28.837915" elapsed="7.276715"/>
+<status status="PASS" start="2024-02-07T20:18:21.604314" elapsed="7.633459"/>
 </suite>
 <statistics>
 <total>
@@ -74,7 +102,7 @@
 </tag>
 <suite>
 <stat pass="1" fail="0" skip="0" id="s1" name="Testes-Automatizados-Tela">Testes-Automatizados-Tela</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="Telasdominio">Testes-Automatizados-Tela.Telasdominio</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Testacompetencia">Testes-Automatizados-Tela.Testacompetencia</stat>
 </suite>
 </statistics>
 <errors>
