@@ -1,78 +1,235 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.11.1 on win32)" generated="2024-02-07T21:05:30.715831" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.11.1 on win32)" generated="2024-02-07T22:20:57.717313" rpa="false" schemaversion="5">
 <suite id="s1" name="Testes-Automatizados-Tela" source="C:\Users\silviaz\OneDrive\Documentos\repositorios\testes-automatizados-tela">
-<suite id="s1-s1" name="Testacompetencia" source="C:\Users\silviaz\OneDrive\Documentos\repositorios\testes-automatizados-tela\testacompetencia.robot">
-<test id="s1-s1-t1" name="Comparar" line="74">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${LISTA_DE_SERVICOS}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-02-07T21:05:31.030883" elapsed="0.002000"/>
+<suite id="s1-s1" name="Telasdominio" source="C:\Users\silviaz\OneDrive\Documentos\repositorios\testes-automatizados-tela\telasdominio.robot">
+<test id="s1-s1-t1" name="Criar um domínio como gestor" line="66">
+<kw name="Run Keywords" owner="BuiltIn" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-02-07T22:20:57.980477" level="INFO">Opening browser 'chrome' to base url 'http://sistemas.t2mlab.com:3008/'.</msg>
+<arg>url=${URL}</arg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-02-07T22:20:57.980477" elapsed="4.824247"/>
 </kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-02-07T21:05:31.034884" level="INFO">${resultado} = Todos os itens são iguais ao texto</msg>
-<var>${resultado}</var>
-<arg>Todos os itens são iguais ao texto</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-02-07T21:05:31.033882" elapsed="0.002357"/>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-02-07T22:21:02.805723" elapsed="0.172400"/>
 </kw>
-<for flavor="IN">
-<iter>
+<arg>Open Browser</arg>
+<arg>url=${URL}</arg>
+<arg>browser=${BROWSER}</arg>
+<arg>AND</arg>
+<arg>SeleniumLibrary.Maximize Browser Window</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2024-02-07T22:20:57.979478" elapsed="4.998645"/>
+</kw>
+<kw name="Realizar login com ${USUARIO_GESTOR} e ${SENHA_VALIDA}" source_name="Realizar login com ${username} e ${password}">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-02-07T22:21:02.990102" level="INFO">Typing text 'Alan' into text field 'id:formBasicEmail'.</msg>
+<arg>${LOGIN_PAGE.UsernameInput}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-07T22:21:02.988101" elapsed="0.148929"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-02-07T22:21:03.139112" level="INFO">Typing text '123' into text field 'id:formBasicPassword'.</msg>
+<arg>${LOGIN_PAGE.PasswordInput}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-07T22:21:03.138051" elapsed="0.070125"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-02-07T22:21:03.209176" level="INFO">Clicking element 'css:[class='botao-default btn btn-var(--verde-primario)']'.</msg>
+<arg>${LOGIN_PAGE.LoginButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-07T22:21:03.208176" elapsed="0.048575"/>
+</kw>
+<status status="PASS" start="2024-02-07T22:21:02.979105" elapsed="0.277646"/>
+</kw>
+<kw name="Selecionar o sistema com ${SISTEMAS_PAGE.BotaoSistema}" source_name="Selecionar o sistema com ${button}">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-02-07T22:21:03.257748" elapsed="1.521478"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-02-07T22:21:04.780225" level="INFO">Clicking element 'xpath://div[@title='Sistema de Biblioteca']//div//button'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-07T22:21:04.779226" elapsed="0.076418"/>
+</kw>
+<status status="PASS" start="2024-02-07T22:21:03.256751" elapsed="1.598893"/>
+</kw>
+<kw name="Selecionar a opção com ${BIBLIOTECA_HOME.OpcaoDominio}" source_name="Selecionar a opção com ${nome}">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${nome}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-02-07T22:21:04.857645" elapsed="0.028579"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-02-07T22:21:04.887257" level="INFO">Clicking element 'xpath://html/body/div/div[1]/div/div[2]/div/div/div/div[2]/div/div/div/div[1]/button'.</msg>
+<msg time="2024-02-07T22:21:05.047581" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-14.png"&gt;&lt;img src="selenium-screenshot-14.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-02-07T22:21:05.048577" level="FAIL">StaleElementReferenceException: Message: stale element reference: stale element not found
+  (Session info: chrome=121.0.6167.140); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF6D4BB5E42+3538674]
+	(No symbol) [0x00007FF6D47D4C02]
+	(No symbol) [0x00007FF6D4685AEB]
+	(No symbol) [0x00007FF6D468AD39]
+	(No symbol) [0x00007FF6D468D150]
+	(No symbol) [0x00007FF6D468D210]
+	(No symbol) [0x00007FF6D46CDED5]
+	(No symbol) [0x00007FF6D46C16D6]
+	(No symbol) [0x00007FF6D46EF0AA]
+	(No symbol) [0x00007FF6D46C124A]
+	(No symbol) [0x00007FF6D46EF2C0]
+	(No symbol) [0x00007FF6D470BDE3]
+	(No symbol) [0x00007FF6D46EEE53]
+	(No symbol) [0x00007FF6D46BF514]
+	(No symbol) [0x00007FF6D46C0631]
+	GetHandleVerifier [0x00007FF6D4BE6CAD+3738973]
+	GetHandleVerifier [0x00007FF6D4C3C506+4089270]
+	GetHandleVerifier [0x00007FF6D4C34823+4057299]
+	GetHandleVerifier [0x00007FF6D4905C49+720121]
+	(No symbol) [0x00007FF6D47E126F]
+	(No symbol) [0x00007FF6D47DC304]
+	(No symbol) [0x00007FF6D47DC432]
+	(No symbol) [0x00007FF6D47CBD04]
+	BaseThreadInitThunk [0x00007FFB878F257D+29]
+	RtlUserThreadStart [0x00007FFB8862AA58+40]
+</msg>
+<arg>${nome}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2024-02-07T22:21:04.887257" elapsed="0.170300">StaleElementReferenceException: Message: stale element reference: stale element not found
+  (Session info: chrome=121.0.6167.140); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF6D4BB5E42+3538674]
+	(No symbol) [0x00007FF6D47D4C02]
+	(No symbol) [0x00007FF6D4685AEB]
+	(No symbol) [0x00007FF6D468AD39]
+	(No symbol) [0x00007FF6D468D150]
+	(No symbol) [0x00007FF6D468D210]
+	(No symbol) [0x00007FF6D46CDED5]
+	(No symbol) [0x00007FF6D46C16D6]
+	(No symbol) [0x00007FF6D46EF0AA]
+	(No symbol) [0x00007FF6D46C124A]
+	(No symbol) [0x00007FF6D46EF2C0]
+	(No symbol) [0x00007FF6D470BDE3]
+	(No symbol) [0x00007FF6D46EEE53]
+	(No symbol) [0x00007FF6D46BF514]
+	(No symbol) [0x00007FF6D46C0631]
+	GetHandleVerifier [0x00007FF6D4BE6CAD+3738973]
+	GetHandleVerifier [0x00007FF6D4C3C506+4089270]
+	GetHandleVerifier [0x00007FF6D4C34823+4057299]
+	GetHandleVerifier [0x00007FF6D4905C49+720121]
+	(No symbol) [0x00007FF6D47E126F]
+	(No symbol) [0x00007FF6D47DC304]
+	(No symbol) [0x00007FF6D47DC432]
+	(No symbol) [0x00007FF6D47CBD04]
+	BaseThreadInitThunk [0x00007FFB878F257D+29]
+	RtlUserThreadStart [0x00007FFB8862AA58+40]
+</status>
+</kw>
+<status status="FAIL" start="2024-02-07T22:21:04.856647" elapsed="0.200910">StaleElementReferenceException: Message: stale element reference: stale element not found
+  (Session info: chrome=121.0.6167.140); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF6D4BB5E42+3538674]
+	(No symbol) [0x00007FF6D47D4C02]
+	(No symbol) [0x00007FF6D4685AEB]
+	(No symbol) [0x00007FF6D468AD39]
+	(No symbol) [0x00007FF6D468D150]
+	(No symbol) [0x00007FF6D468D210]
+	(No symbol) [0x00007FF6D46CDED5]
+	(No symbol) [0x00007FF6D46C16D6]
+	(No symbol) [0x00007FF6D46EF0AA]
+	(No symbol) [0x00007FF6D46C124A]
+	(No symbol) [0x00007FF6D46EF2C0]
+	(No symbol) [0x00007FF6D470BDE3]
+	(No symbol) [0x00007FF6D46EEE53]
+	(No symbol) [0x00007FF6D46BF514]
+	(No symbol) [0x00007FF6D46C0631]
+	GetHandleVerifier [0x00007FF6D4BE6CAD+3738973]
+	GetHandleVerifier [0x00007FF6D4C3C506+4089270]
+	GetHandleVerifier [0x00007FF6D4C34823+4057299]
+	GetHandleVerifier [0x00007FF6D4905C49+720121]
+	(No symbol) [0x00007FF6D47E126F]
+	(No symbol) [0x00007FF6D47DC304]
+	(No symbol) [0x00007FF6D47DC432]
+	(No symbol) [0x00007FF6D47CBD04]
+	BaseThreadInitThunk [0x00007FFB878F257D+29]
+	RtlUserThreadStart [0x00007FFB8862AA58+40]
+</status>
+</kw>
+<kw name="Selecionar a opção com ${MENU_DOMINIO.OpcaoCadastrarDominio}" source_name="Selecionar a opção com ${nome}">
+<status status="NOT RUN" start="2024-02-07T22:21:05.058580" elapsed="0.000000"/>
+</kw>
+<kw name="Digitar no campo com ${TELA_CADASTRAR_DOMINIO.CampoNomeDominio} e ${DOMINIO}" source_name="Digitar no campo com ${campo} e ${conteudo}">
+<status status="NOT RUN" start="2024-02-07T22:21:05.058936" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${TELA_CADASTRAR_DOMINIO.BotaoCadastrar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-02-07T22:21:05.058936" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${MODAL_CONFIRMAR_CADASTRO_DOMINIO.BotaoConfirmar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-02-07T22:21:05.059944" elapsed="0.000000"/>
+</kw>
 <if>
-<branch type="IF" condition="'${item}'!='${SERVICO}'">
-<kw name="Set Variable" owner="BuiltIn">
-<var>${resultado}</var>
-<arg>Há pelo menos um item diferente do texto</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2024-02-07T21:05:31.039638" elapsed="0.000996"/>
-</kw>
-<status status="NOT RUN" start="2024-02-07T21:05:31.039638" elapsed="0.000996"/>
-</branch>
-<status status="PASS" start="2024-02-07T21:05:31.039638" elapsed="0.000996"/>
-</if>
-<var name="${item}">Qualidade</var>
-<status status="PASS" start="2024-02-07T21:05:31.039638" elapsed="0.000996"/>
-</iter>
-<iter>
-<if>
-<branch type="IF" condition="'${item}'!='${SERVICO}'">
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-02-07T21:05:31.041635" level="INFO">${resultado} = Há pelo menos um item diferente do texto</msg>
-<var>${resultado}</var>
-<arg>Há pelo menos um item diferente do texto</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-02-07T21:05:31.041635" elapsed="0.000000"/>
-</kw>
-<status status="PASS" start="2024-02-07T21:05:31.040634" elapsed="0.001001"/>
-</branch>
-<status status="PASS" start="2024-02-07T21:05:31.040634" elapsed="0.001001"/>
-</if>
-<var name="${item}">Desenvolvimento</var>
-<status status="PASS" start="2024-02-07T21:05:31.040634" elapsed="0.002001"/>
-</iter>
-<var>${item}</var>
-<value>@{LISTA_DE_SERVICOS}</value>
-<status status="PASS" start="2024-02-07T21:05:31.038650" elapsed="0.003985"/>
-</for>
+<branch type="IF" condition="'${MODAL_ALERT.TextoAlert}'='${TXT_CONFIRMA_CADASTRO}'">
 <kw name="Log To Console" owner="BuiltIn">
-<arg>${resultado}</arg>
+<arg>Cadastro confirmado.</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-02-07T21:05:31.042635" elapsed="0.002003"/>
+<status status="NOT RUN" start="2024-02-07T22:21:05.059944" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-02-07T21:05:31.028882" elapsed="0.016754"/>
+<status status="NOT RUN" start="2024-02-07T22:21:05.059944" elapsed="0.000000"/>
+</branch>
+<status status="NOT RUN" start="2024-02-07T22:21:05.059944" elapsed="0.000000"/>
+</if>
+<status status="FAIL" start="2024-02-07T22:20:57.978479" elapsed="7.082554">StaleElementReferenceException: Message: stale element reference: stale element not found
+  (Session info: chrome=121.0.6167.140); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF6D4BB5E42+3538674]
+	(No symbol) [0x00007FF6D47D4C02]
+	(No symbol) [0x00007FF6D4685AEB]
+	(No symbol) [0x00007FF6D468AD39]
+	(No symbol) [0x00007FF6D468D150]
+	(No symbol) [0x00007FF6D468D210]
+	(No symbol) [0x00007FF6D46CDED5]
+	(No symbol) [0x00007FF6D46C16D6]
+	(No symbol) [0x00007FF6D46EF0AA]
+	(No symbol) [0x00007FF6D46C124A]
+	(No symbol) [0x00007FF6D46EF2C0]
+	(No symbol) [0x00007FF6D470BDE3]
+	(No symbol) [0x00007FF6D46EEE53]
+	(No symbol) [0x00007FF6D46BF514]
+	(No symbol) [0x00007FF6D46C0631]
+	GetHandleVerifier [0x00007FF6D4BE6CAD+3738973]
+	GetHandleVerifier [0x00007FF6D4C3C506+4089270]
+	GetHandleVerifier [0x00007FF6D4C34823+4057299]
+	GetHandleVerifier [0x00007FF6D4905C49+720121]
+	(No symbol) [0x00007FF6D47E126F]
+	(No symbol) [0x00007FF6D47DC304]
+	(No symbol) [0x00007FF6D47DC432]
+	(No symbol) [0x00007FF6D47CBD04]
+	BaseThreadInitThunk [0x00007FFB878F257D+29]
+	RtlUserThreadStart [0x00007FFB8862AA58+40]
+</status>
 </test>
-<status status="PASS" start="2024-02-07T21:05:30.766200" elapsed="0.288767"/>
+<status status="FAIL" start="2024-02-07T22:20:57.756384" elapsed="7.308632"/>
 </suite>
-<status status="PASS" start="2024-02-07T21:05:30.721832" elapsed="0.334137"/>
+<status status="FAIL" start="2024-02-07T22:20:57.721321" elapsed="7.346697"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Testes-Automatizados-Tela">Testes-Automatizados-Tela</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="Testacompetencia">Testes-Automatizados-Tela.Testacompetencia</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Testes-Automatizados-Tela">Testes-Automatizados-Tela</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Telasdominio">Testes-Automatizados-Tela.Telasdominio</stat>
 </suite>
 </statistics>
 <errors>
