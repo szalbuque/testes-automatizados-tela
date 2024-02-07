@@ -18,6 +18,7 @@ ${BROWSER}    chrome
 ${USUARIO_GESTOR}    Alan
 ${SENHA_VALIDA}    123
 ${SISTEMA}    Sistema de Competência
+${SERVICO}    Qualidade
 
 # Page object model (POM)
 &{LOGIN_PAGE}
@@ -35,6 +36,9 @@ ${SISTEMA}    Sistema de Competência
 &{HOME_EMPRESA}
 ...    OpcaoBuscarEmpresa=xpath://div[@title='Buscar Empresa']//a
 
+&{TELA_BUSCAR_EMPRESA}
+...    CampoBusca=css:[class='form-control']
+
 *** Keywords ***
 
 ## Ações ##
@@ -51,6 +55,12 @@ Selecionar a opção com ${nome}
     Wait Until Element Is Visible    ${nome}
     Click Element    ${nome}
 
+Digitar no campo com ${campo} e ${conteudo}
+    Click Element    ${campo}
+    Input Text    ${campo}    ${conteudo}
+
+    
+
 *** Test Cases ***
 
 Visualizar as empresas filtrando por serviços
@@ -58,4 +68,9 @@ Visualizar as empresas filtrando por serviços
     Selecionar o sistema com ${SISTEMAS_PAGE.BotaoSistema}
     Selecionar a opção com ${HOME_COMPETENCIAS.OpcaoEmpresa}
     Selecionar a opção com ${HOME_EMPRESA.OpcaoBuscarEmpresa}
-    
+    Digitar no campo com ${TELA_BUSCAR_EMPRESA.CampoBusca} e ${SERVICO}
+
+## Neste ponto deveria haver uma forma de verificar se estão sendo exibidos somente as empresas com o serviço digitado.
+
+
+
